@@ -1,8 +1,8 @@
 ﻿{
 	"ReRoutes": [
 		{
-			"DownstreamPathTemplate": "/api/values",
-			"UpstreamPathTemplate": "/datos",
+			"DownstreamPathTemplate": "/{everything}",
+			"UpstreamPathTemplate": "/servicea/{everything}",
 			"UpstreamHttpMethod": [
 				"Get"
 			],
