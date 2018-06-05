@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ServiceFabricApplication", "ServiceFabricApplication\ServiceFabricApplication.sfproj", "{C5D13EBC-1B54-45CA-B8A9-A834A0D5182E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppGateway", "AppGateway\AppGateway.csproj", "{777521EB-ADA2-4085-91D5-ED848AE2C716}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppGateway", "AppGateway\AppGateway.csproj", "{777521EB-ADA2-4085-91D5-ED848AE2C716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceA", "ServiceA\ServiceA.csproj", "{E91C1067-66D6-4BF5-916C-1F89474777DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceA", "ServiceA\ServiceA.csproj", "{E91C1067-66D6-4BF5-916C-1F89474777DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
