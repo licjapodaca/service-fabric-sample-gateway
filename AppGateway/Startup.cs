@@ -21,8 +21,6 @@ namespace AppGateway
 			.AddJsonFile("configuration.json")
 			.AddEnvironmentVariables();
 
-			//builder.AddJsonFile(builder.Build()["TipoArquitectura"] == "Microservicios" ? "microservicios.json" : "servicios.json");
-
 			Configuration = builder.Build();
 		}
 

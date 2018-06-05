@@ -18,16 +18,16 @@ namespace AppGateway
 		/// </summary>
 		private static void Main()
 		{
-			IConfigurationRoot configuration;
+			//IConfigurationRoot configuration;
 
-			var builder = new ConfigurationBuilder()
-				.SetBasePath(Directory.GetCurrentDirectory())
-				.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+			//var builder = new ConfigurationBuilder()
+			//	.SetBasePath(Directory.GetCurrentDirectory())
+			//	.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-			configuration = builder.Build();
+			//configuration = builder.Build();
 
-			if (configuration["TipoArquitectura"] == "Microservicios")
-			{
+			//if (configuration["TipoArquitectura"] == "Microservicios")
+			//{
 				try
 				{
 					// The ServiceManifest.XML file defines one or more service type names.
@@ -48,24 +48,24 @@ namespace AppGateway
 					ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
 					throw;
 				}
-			}
-			else // Servicios
-			{
-				IWebHostBuilder hostBuilder = new WebHostBuilder();
+			//}
+			//else // Servicios
+			//{
+			//	IWebHostBuilder hostBuilder = new WebHostBuilder();
 
-				hostBuilder.ConfigureServices(s =>
-				{
-					s.AddSingleton(hostBuilder);
-				});
+			//	hostBuilder.ConfigureServices(s =>
+			//	{
+			//		s.AddSingleton(hostBuilder);
+			//	});
 
-				hostBuilder.UseKestrel()
-					.UseContentRoot(Directory.GetCurrentDirectory())
-					.UseStartup<Startup>();
+			//	hostBuilder.UseKestrel()
+			//		.UseContentRoot(Directory.GetCurrentDirectory())
+			//		.UseStartup<Startup>();
 
-				var host = hostBuilder.Build();
+			//	var host = hostBuilder.Build();
 
-				host.Run();
-			}
+			//	host.Run();
+			//}
 		}
 	}
 }
