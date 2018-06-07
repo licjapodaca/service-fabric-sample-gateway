@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="ServiceFabricApplicationType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
+    <Parameter Name="ServiceB_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="ServiceB_Isolation" DefaultValue="default" />
     <Parameter Name="Gateway_InstanceCount" DefaultValue="-1" />
     <Parameter Name="ServiceA_InstanceCount" DefaultValue="-1" />
     <Parameter Name="ServiceA_Isolation" DefaultValue="default" />
@@ -8,6 +10,16 @@
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ServiceBPkg" ServiceManifestVersion="1.0.0" />
+    <Policies>
+      <ContainerHostPolicies CodePackageRef="Code" Isolation="[ServiceB_Isolation]">
+        <!-- See https://aka.ms/I7z0p9 for how to encrypt your repository password -->
+        <RepositoryCredentials AccountName="justicia4gdevops" Password="08UH4MG8P4gQU/oImillx7e=1UEp6iml" PasswordEncrypted="false" />
+        <PortBinding ContainerPort="80" EndpointRef="ServiceBTypeEndpoint" />
+      </ContainerHostPolicies>
+    </Policies>
+  </ServiceManifestImport>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="GatewayPkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
@@ -22,6 +34,11 @@
          ServiceFabric PowerShell module.
          
          The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="ServiceB" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="ServiceBType" InstanceCount="[ServiceB_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
     <Service Name="Gateway" ServicePackageActivationMode="ExclusiveProcess">
       <StatelessService ServiceTypeName="GatewayType" InstanceCount="[Gateway_InstanceCount]">
         <SingletonPartition />

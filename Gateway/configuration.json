@@ -11,6 +11,18 @@
 			],
 			"UpstreamPathTemplate": "/servicioa/{route}",
 			"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+		},
+		{
+			"DownstreamPathTemplate": "/ServiceFabricApplication/ServiceB/{route}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 19081
+				}
+			],
+			"UpstreamPathTemplate": "/serviciob/{route}",
+			"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
 		}
 	],
 	"GlobalConfiguration": {}
