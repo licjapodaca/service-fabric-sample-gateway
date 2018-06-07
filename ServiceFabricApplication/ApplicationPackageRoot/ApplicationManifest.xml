@@ -15,7 +15,7 @@
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code" Isolation="[ServiceB_Isolation]">
         <!-- See https://aka.ms/I7z0p9 for how to encrypt your repository password -->
-        <RepositoryCredentials AccountName="justicia4gdevops" Password="08UH4MG8P4gQU/oImillx7e=1UEp6iml" PasswordEncrypted="false" />
+        <RepositoryCredentials AccountName="justicia4gdevops" Password="" PasswordEncrypted="false" />
         <PortBinding ContainerPort="80" EndpointRef="ServiceBTypeEndpoint" />
       </ContainerHostPolicies>
     </Policies>
