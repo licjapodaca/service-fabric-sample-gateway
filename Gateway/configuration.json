@@ -1,0 +1,17 @@
+﻿{
+	"ReRoutes": [
+		{
+			"DownstreamPathTemplate": "/ServiceFabricApplication/ServiceA/{route}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "localhost",
+					"Port": 19081
+				}
+			],
+			"UpstreamPathTemplate": "/servicioa/{route}",
+			"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+		}
+	],
+	"GlobalConfiguration": {}
+}

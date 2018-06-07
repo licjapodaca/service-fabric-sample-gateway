@@ -34,7 +34,7 @@
     <Content Include="PublishProfiles\BTS-OnPremises.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppGateway\AppGateway.csproj" />
+    <ProjectReference Include="..\Gateway\Gateway.csproj" />
     <ProjectReference Include="..\ServiceA\ServiceA.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

@@ -11,14 +11,14 @@ using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace AppGateway
+namespace Gateway
 {
     /// <summary>
     /// The FabricRuntime creates an instance of this class for each service type instance. 
     /// </summary>
-    internal sealed class AppGateway : StatelessService
+    internal sealed class Gateway : StatelessService
     {
-        public AppGateway(StatelessServiceContext context)
+        public Gateway(StatelessServiceContext context)
             : base(context)
         { }
 
@@ -28,25 +28,28 @@ namespace AppGateway
         /// <returns>The collection of listeners.</returns>
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
-			return new ServiceInstanceListener[]
-			{
-				new ServiceInstanceListener(serviceContext =>
-					new KestrelCommunicationListener(serviceContext, "ServiceEndpoint", (url, listener) =>
-					{
-						ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
+            return new ServiceInstanceListener[]
+            {
+                new ServiceInstanceListener(serviceContext =>
+                    new KestrelCommunicationListener(serviceContext, "ServiceEndpoint", (url, listener) =>
+                    {
+                        ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
 
-						return new WebHostBuilder()
+						IWebHostBuilder builder = new WebHostBuilder();
+
+						return builder
 									.UseKestrel()
-									.ConfigureServices(
-										services => services
-											.AddSingleton<StatelessServiceContext>(serviceContext))
+									.ConfigureServices(s => {
+										s.AddSingleton<StatelessServiceContext>(serviceContext);
+										s.AddSingleton(builder);
+									})
 									.UseContentRoot(Directory.GetCurrentDirectory())
 									.UseStartup<Startup>()
 									.UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
 									.UseUrls(url)
 									.Build();
-					}))
-			};
-		}
+                    }))
+            };
+        }
     }
 }

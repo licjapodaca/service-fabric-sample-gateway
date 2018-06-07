@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace AppGateway
+namespace Gateway
 {
-    [EventSource(Name = "MyCompany-ServiceFabricApplication-AppGateway")]
+    [EventSource(Name = "MyCompany-ServiceFabricApplication-Gateway")]
     internal sealed class ServiceEventSource : EventSource
     {
         public static readonly ServiceEventSource Current = new ServiceEventSource();
@@ -83,10 +83,10 @@ namespace AppGateway
             }
         }
 
-		// For very high-frequency events it might be advantageous to raise events using WriteEventCore API.
-		// This results in more efficient parameter handling, but requires explicit allocation of EventData structure and unsafe code.
-		// To enable this code path, define UNSAFE conditional compilation symbol and turn on unsafe code support in project properties.
-		private const int ServiceMessageEventId = 2;
+        // For very high-frequency events it might be advantageous to raise events using WriteEventCore API.
+        // This results in more efficient parameter handling, but requires explicit allocation of EventData structure and unsafe code.
+        // To enable this code path, define UNSAFE conditional compilation symbol and turn on unsafe code support in project properties.
+        private const int ServiceMessageEventId = 2;
         [Event(ServiceMessageEventId, Level = EventLevel.Informational, Message = "{7}")]
         private
 #if UNSAFE
