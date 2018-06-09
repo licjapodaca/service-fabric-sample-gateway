@@ -30,13 +30,14 @@
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApplicationPackageRoot\ServiceBPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\ServiceBPkg\ServiceManifest.xml" />
     <Content Include="packages.config" />
     <Content Include="PublishProfiles\BTS-OnPremises.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gateway\Gateway.csproj" />
     <ProjectReference Include="..\ServiceA\ServiceA.csproj" />
-    <ProjectReference Include="..\ServiceB\ServiceB.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

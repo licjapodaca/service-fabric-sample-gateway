@@ -1,6 +1,7 @@
-﻿# See https://aka.ms/containerimagehelp for information on how to use Windows Server 1709 containers with Service Fabric.
-# FROM microsoft/aspnet:4.7.1-windowsservercore-1709
-FROM microsoft/aspnet:4.7.1-windowsservercore-ltsc2016
-ARG source
+﻿FROM microsoft/aspnet:4.7.1-windowsservercore-ltsc2016
+
+#RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
+
 WORKDIR /inetpub/wwwroot
-COPY ${source:-obj/Docker/publish} .
+
+COPY bin/Release/Publish .

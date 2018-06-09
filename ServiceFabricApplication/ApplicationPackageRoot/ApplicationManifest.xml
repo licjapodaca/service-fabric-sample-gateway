@@ -2,7 +2,6 @@
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="ServiceFabricApplicationType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="ServiceB_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="ServiceB_Isolation" DefaultValue="default" />
     <Parameter Name="Gateway_InstanceCount" DefaultValue="-1" />
     <Parameter Name="ServiceA_InstanceCount" DefaultValue="-1" />
     <Parameter Name="ServiceA_Isolation" DefaultValue="default" />
@@ -12,10 +11,11 @@
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="ServiceBPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
     <Policies>
-      <ContainerHostPolicies CodePackageRef="Code" Isolation="[ServiceB_Isolation]">
+      <ContainerHostPolicies CodePackageRef="Code">
         <!-- See https://aka.ms/I7z0p9 for how to encrypt your repository password -->
-        <RepositoryCredentials AccountName="justicia4gdevops" Password="08UH4MG8P4gQU/oImillx7e=1UEp6iml" PasswordEncrypted="false" />
+        <RepositoryCredentials AccountName="justicia4gdevops" Password="DBiMP89AQFogl1JyJHrntUJc+R4D1lEX" PasswordEncrypted="false" />
         <PortBinding ContainerPort="80" EndpointRef="ServiceBTypeEndpoint" />
       </ContainerHostPolicies>
     </Policies>

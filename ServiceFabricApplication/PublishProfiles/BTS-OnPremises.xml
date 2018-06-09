@@ -6,7 +6,7 @@
        For a local cluster, you would typically not use any parameters.
          For example: <ClusterConnectionParameters />
   -->
-	<ClusterConnectionParameters ConnectionEndpoint="svr-4gsf-a:19000" WindowsCredential="true" />
+	<ClusterConnectionParameters ConnectionEndpoint="sf-examples.net:19000" WindowsCredential="true" />
 
 	<ApplicationParameterFile Path="..\ApplicationParameters\BTS-OnPremises.xml" />
 	<ContainerRegistryParameters Server="justicia4gdevops.azurecr.io" RegistryName="justicia4gDevOps" UserName="justicia4gDevOps" />
