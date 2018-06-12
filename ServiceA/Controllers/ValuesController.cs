@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Fabric;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceA.Controllers
 {
-    [Route("api/[controller]")]
+	[Route("api/[controller]")]
     public class ValuesController : Controller
     {
 		private readonly StatelessServiceContext context;
@@ -17,12 +16,12 @@ namespace ServiceA.Controllers
 			this.context = context;
 		}
 
-        // GET api/values
-        [HttpGet]
+		// GET api/values
+		[HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "NodeName", context.NodeContext.NodeName };
-        }
+			return new string[] { "NodeName", context.NodeContext.NodeName };
+		}
 
         // GET api/values/5
         [HttpGet("{id}")]

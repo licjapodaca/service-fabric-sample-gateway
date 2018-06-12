@@ -38,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Gateway\Gateway.csproj" />
     <ProjectReference Include="..\ServiceA\ServiceA.csproj" />
+    <ProjectReference Include="..\ServiceOAuth\ServiceOAuth.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

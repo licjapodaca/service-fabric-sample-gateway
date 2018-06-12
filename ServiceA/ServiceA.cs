@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
@@ -44,6 +45,11 @@ namespace ServiceA
                                     .UseStartup<Startup>()
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                                     .UseUrls(url)
+									.ConfigureLogging((hostingContext, logging) =>
+									{
+										logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+										logging.AddConsole();
+									})
                                     .Build();
                     }))
             };
