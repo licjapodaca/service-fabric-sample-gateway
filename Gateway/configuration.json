@@ -1,45 +1,5 @@
 ﻿{
 	"ReRoutes": [
-		//{
-		//	"DownstreamPathTemplate": "/ServiceFabricApplication/ServiceA/{route}",
-		//	"DownstreamScheme": "http",
-		//	"DownstreamHostAndPorts": [
-		//		{
-		//			"Host": "localhost",
-		//			"Port": 19081
-		//		}
-		//	],
-		//	"UpstreamPathTemplate": "/servicea/{route}",
-		//	"UpstreamHttpMethod": [ "Get", "Post" ],
-		//	"AuthenticationOptions": {
-		//		"AuthenticationProviderKey": "TestKey",
-		//		"AllowedScopes": []
-		//	}
-		//},
-		//{
-		//	"DownstreamPathTemplate": "/ServiceFabricApplication/ServiceB/{route}",
-		//	"DownstreamScheme": "http",
-		//	"DownstreamHostAndPorts": [
-		//		{
-		//			"Host": "localhost",
-		//			"Port": 19081
-		//		}
-		//	],
-		//	"UpstreamPathTemplate": "/serviceb/{route}",
-		//	"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-		//},
-		//{
-		//	"DownstreamPathTemplate": "/ServiceFabricApplication/ServiceOAuth/{route}",
-		//	"DownstreamScheme": "http",
-		//	"DownstreamHostAndPorts": [
-		//		{
-		//			"Host": "localhost",
-		//			"Port": 19081
-		//		}
-		//	],
-		//	"UpstreamPathTemplate": "/serviceoauth/{route}",
-		//	"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-		//}
 		{
 			"DownstreamPathTemplate": "/{route}",
 			"UpstreamPathTemplate": "/servicea/{route}",
@@ -48,6 +8,24 @@
 			],
 			"DownstreamScheme": "http",
 			"ServiceName": "ServiceFabricApplication/ServiceA",
+			"UseServiceDiscovery": true,
+			"AuthenticationOptions": {
+				"AuthenticationProviderKey": "TestKey",
+				"AllowedScopes": []
+			},
+			"AddHeadersToRequest": {
+				"claims_City": "Claims[City] > value > |",
+				"claims_State": "Claims[State] > value > |"
+			}
+		},
+		{
+			"DownstreamPathTemplate": "/{route}",
+			"UpstreamPathTemplate": "/serviceb/{route}",
+			"UpstreamHttpMethod": [
+				"Get"
+			],
+			"DownstreamScheme": "http",
+			"ServiceName": "ServiceFabricApplication/ServiceB",
 			"UseServiceDiscovery": true,
 			"AuthenticationOptions": {
 				"AuthenticationProviderKey": "TestKey",

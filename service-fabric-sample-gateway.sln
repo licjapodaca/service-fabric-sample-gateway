@@ -11,7 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceB", "ServiceB\ServiceB.csproj", "{B45E3CD2-1719-431F-AE1E-F61D25B243B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceOAuth", "ServiceOAuth\ServiceOAuth.csproj", "{BD844F79-11EA-4B3C-9CCD-410636DB14FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceOAuth", "ServiceOAuth\ServiceOAuth.csproj", "{BD844F79-11EA-4B3C-9CCD-410636DB14FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Frontend (Sencha ExtJS)", "01 - Frontend (Sencha ExtJS)", "{A8F68C5B-E2B3-4583-9626-527380E1C0C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Gateway (Ocelot)", "02 - Gateway (Ocelot)", "{67933044-BB23-4704-BC66-9D7DF6DB2992}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Microservices", "03 - Microservices", "{B94E9FF1-5311-495B-A978-7B5A2988CD6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00B - Identity Server 4", "00B - Identity Server 4", "{2D468CAA-14DA-482F-8334-172707DF50CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00A - Service Fabric Application", "00A - Service Fabric Application", "{BE9D012B-B407-4DC8-95A3-F46FB8E93083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +74,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5D13EBC-1B54-45CA-B8A9-A834A0D5182E} = {BE9D012B-B407-4DC8-95A3-F46FB8E93083}
+		{E91C1067-66D6-4BF5-916C-1F89474777DB} = {B94E9FF1-5311-495B-A978-7B5A2988CD6E}
+		{91B219FE-609B-49FC-A602-700FE2B7E04E} = {67933044-BB23-4704-BC66-9D7DF6DB2992}
+		{B45E3CD2-1719-431F-AE1E-F61D25B243B3} = {B94E9FF1-5311-495B-A978-7B5A2988CD6E}
+		{BD844F79-11EA-4B3C-9CCD-410636DB14FD} = {2D468CAA-14DA-482F-8334-172707DF50CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9C75A3B-83BA-4A98-9A9E-0DD543CC9F61}
