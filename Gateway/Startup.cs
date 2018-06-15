@@ -29,6 +29,8 @@ namespace Gateway
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddCors();
+
 			var authenticationProviderKey = "TestKey";
 			
 			services.AddOcelot(Configuration);
@@ -48,6 +50,14 @@ namespace Gateway
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 		{
 			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+
+			app.UseCors(builder =>
+			{
+				builder.WithOrigins("*");
+				builder.AllowAnyHeader();
+				builder.AllowAnyMethod();
+			});
+
 			app.UseOcelot().Wait();
 		}
 	}

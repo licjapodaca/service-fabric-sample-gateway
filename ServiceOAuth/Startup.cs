@@ -16,6 +16,8 @@ namespace ServiceOAuth
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+			services.AddCors();
+
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 			services.AddIdentityServer()
@@ -35,6 +37,13 @@ namespace ServiceOAuth
 			app.UseDeveloperExceptionPage();
 
 			app.UseIdentityServer();
+
+			app.UseCors(builder =>
+			{
+				builder.WithOrigins("*");
+				builder.AllowAnyHeader();
+				builder.AllowAnyMethod();
+			});
 
 			app.UseStaticFiles();
 

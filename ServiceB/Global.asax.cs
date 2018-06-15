@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,12 @@ namespace ServiceB
 	{
 		protected void Application_Start()
 		{
+			GlobalConfiguration.Configuration
+			  .Formatters
+			  .JsonFormatter
+			  .SerializerSettings
+			  .ContractResolver = new CamelCasePropertyNamesContractResolver();
+
 			AreaRegistration.RegisterAllAreas();
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
