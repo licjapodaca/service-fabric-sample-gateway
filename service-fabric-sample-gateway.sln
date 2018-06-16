@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Gateway (Ocelot)", "02
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Microservices", "03 - Microservices", "{B94E9FF1-5311-495B-A978-7B5A2988CD6E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00B - Identity Server 4", "00B - Identity Server 4", "{2D468CAA-14DA-482F-8334-172707DF50CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.B - Identity Server 4", "00.B - Identity Server 4", "{2D468CAA-14DA-482F-8334-172707DF50CA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00A - Service Fabric Application", "00A - Service Fabric Application", "{BE9D012B-B407-4DC8-95A3-F46FB8E93083}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.A - Service Fabric Application", "00.A - Service Fabric Application", "{BE9D012B-B407-4DC8-95A3-F46FB8E93083}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{E1DFDBFC-7548-4113-8858-D317CDD58DA1}"
 EndProject
