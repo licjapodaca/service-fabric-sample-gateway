@@ -34,6 +34,22 @@
 		},
 		{
 			"DownstreamPathTemplate": "/{route}",
+			"UpstreamPathTemplate": "/servicec/{route}",
+			"UpstreamHttpMethod": [ "Get", "Options" ],
+			"DownstreamScheme": "http",
+			"ServiceName": "ServiceFabricApplication/ServiceC",
+			"UseServiceDiscovery": true,
+			"AuthenticationOptions": {
+				"AuthenticationProviderKey": "TestKey",
+				"AllowedScopes": []
+			},
+			"AddHeadersToRequest": {
+				"claims_City": "Claims[City] > value > |",
+				"claims_State": "Claims[State] > value > |"
+			}
+		},
+		{
+			"DownstreamPathTemplate": "/{route}",
 			"UpstreamPathTemplate": "/serviceoauth/{route}",
 			"UpstreamHttpMethod": [ "Get", "Options", "Post" ],
 			"DownstreamScheme": "http",

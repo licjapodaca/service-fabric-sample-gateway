@@ -32,6 +32,8 @@
   <ItemGroup>
     <Content Include="ApplicationPackageRoot\ServiceBPkg\Config\Settings.xml" />
     <Content Include="ApplicationPackageRoot\ServiceBPkg\ServiceManifest.xml" />
+    <Content Include="ApplicationPackageRoot\ServiceCPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\ServiceCPkg\ServiceManifest.xml" />
     <Content Include="packages.config" />
     <Content Include="PublishProfiles\BTS-OnPremises.xml" />
   </ItemGroup>

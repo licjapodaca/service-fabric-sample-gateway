@@ -84,10 +84,16 @@ Ext.define('Frontend.view.main.Main', {
             xtype: 'grid-servicea'
         }]
     }, {
-        title: 'Service B - Container',
+        title: 'Service B - Container (Legacy)',
         iconCls: 'fa-gear',
         items: [{
             xtype: 'grid-serviceb'
+        }]
+    }, {
+        title: 'Service C - Container (Node)',
+        iconCls: 'fa-gear',
+        items: [{
+            xtype: 'grid-servicec'
         }]
     }]
 });
