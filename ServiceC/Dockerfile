@@ -1,4 +1,4 @@
-FROM node:10.4.1-nano
+FROM justicia4gdevops.azurecr.io/base/node:10.4.1-nano
 
 RUN mkdir \app
 WORKDIR /app
