@@ -29,7 +29,7 @@ Ext.define('Frontend.view.servicea.ServiceAController', {
 
 			AjaxHelpers.executeCall({
 
-				url: 'http://localhost:50605/serviceoauth/connect/token',
+				url: 'http://sf-microservices.net:50605/serviceoauth/connect/token',
 				method: 'POST',
 				params: {
 					client_id: 'socialnetworkclient',

@@ -32,7 +32,7 @@ Ext.define('Frontend.view.servicec.ServiceCController', {
 			
 			AjaxHelpers.executeCall({
 
-				url: 'http://localhost:50605/servicec/users/10',
+				url: 'http://sf-microservices.net:50605/servicec/users/10',
 				method: 'GET'
 
 			}).then(function (content) {

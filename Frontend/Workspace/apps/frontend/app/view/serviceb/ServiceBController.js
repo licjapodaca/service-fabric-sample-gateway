@@ -32,7 +32,7 @@ Ext.define('Frontend.view.serviceb.ServiceBController', {
 			
 			AjaxHelpers.executeCall({
 
-				url: 'http://localhost:50605/serviceb/api/vehiclebrand',
+				url: 'http://sf-microservices.net:50605/serviceb/api/vehiclebrand',
 				method: 'GET'
 
 			}).then(function (content) {
