@@ -13,7 +13,7 @@ var appRouter = function (app) {
 			username: faker.internet.userName(),
 			email: faker.internet.email()
 		});
-		res.status(200).send(data);
+		res.status(200).send({ datos: data, servidor: "" });
 	});
 
 	app.get("/users/:num", function (req, res) {
@@ -30,7 +30,7 @@ var appRouter = function (app) {
 				});
 			}
 
-			res.status(200).send(users);
+			res.status(200).send({ datos: users, servidor: "" });
 
 		} else {
 			res.status(400).send({ message: 'invalid number supplied' });

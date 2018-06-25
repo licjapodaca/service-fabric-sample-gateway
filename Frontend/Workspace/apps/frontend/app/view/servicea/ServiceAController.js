@@ -63,7 +63,7 @@ Ext.define('Frontend.view.servicea.ServiceAController', {
 			
 			AjaxHelpers.executeCall({
 
-				url: 'http://sf-microservices:50605/servicea/api/employees',
+				url: 'http://sf-microservices.net:50605/servicea/api/employees',
 				method: 'GET'
 
 			}).then(function (content) {
