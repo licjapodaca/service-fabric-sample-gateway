@@ -20,7 +20,7 @@
       <ContainerHostPolicies CodePackageRef="Code">
         <!-- See https://aka.ms/I7z0p9 for how to encrypt your repository password -->
         <!-- See https://aka.ms/I7z0p9 for how to encrypt your repository password -->
-        <RepositoryCredentials AccountName="justicia4gdevops" Password="" PasswordEncrypted="true" />
+        <RepositoryCredentials AccountName="justicia4gdevops" Password="[ACR-Password]" PasswordEncrypted="true" />
         <PortBinding ContainerPort="80" EndpointRef="FrontendTypeEndpoint" />
       </ContainerHostPolicies>
     </Policies>
